@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Person {
+        constructor(makh, ten, sdt, diachi, email) {
+            this.makh = makh;
+            this.ten = ten;
+            this.sdt = sdt;
+            this.diachi = diachi;
+            this.email = email;
+        }
+
+        getMakh() {
+            return this.makh;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        getSdt() {
+            return this.sdt;
+        }
+
+        getDiachi() {
+            return this.diachi;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setMakh(makh) {
+            this.makh = makh;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        setSdt(sdt) {
+            this.sdt = sdt;
+        }
+
+        setDiachi(diachi) {
+            this.diachi = diachi;
+        }
+
+        setEmail(email) {
+            this.email = email
+        }
+
+    }
+
+    function display(arr) {
+        let str = "";
+        for (let i = 0; i < arr.length; i++) {
+            str += "<tr>" +
+                "<td>" + arr[i].getMakh() + "</td>" +
+                "<td>" + arr[i].getTen() + "</td>" +
+                "<td>" + arr[i].getSdt() + "</td>" +
+                "<td>" + arr[i].getDiachi() + "</td>" +
+                "<td>" + arr[i].getEmail() + "</td>" +
+                "<td><button onclick='updateProduct(" + i + ")'  ><i class='bx bxs-edit-alt'></i></button></td>" +
+                "<td><button onclick='deleteProduct(" + i + ")'><i class='bx bxs-trash' ></i></button></td>" +
+                "</tr>";
+        }
+    }
+    function addNewProduct(arr) {
+        let productName = document.getElementById("name").value;
+        arr.push(productName);
+        document.getElementById("name").value = "";
+        display(arr);
+    }
+</script>
+</body>
+</html>

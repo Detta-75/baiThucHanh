@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
+    let number = +prompt("Nhập điểm: ");
+    if (number < 0 || number > 100) {
+        document.write("Điểm phải nằm trong khoảng từ 0 đến 100.")
+    } else if (number >= 50) {
+        document.write("Đậu" + "<br>");
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] - number < 3 && arr[i] - number > 0) {
+                number = arr[i]
+                document.write("Điểm: " + number)
+            } else {
+                document.write("Điểm: " + number);
+            }
+        }
+    }
+        else {
+                document.write("Rớt")
+        }
+</script>
+</body>
+</html>
